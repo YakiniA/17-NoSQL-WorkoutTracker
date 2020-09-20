@@ -8,10 +8,10 @@ console.log("Path " +path.join(__dirname, "../public/exercise.html"))
 
 module.exports = function(app) {
 
-//   app.get("/exercise", function(req, res) {
-//    console.log("got inside");
-//     res.sendFile(path.join(__dirname, "../public/exercise.html"));
-//   });
+    app.get("/exercise", function(req, res) {
+    console.log("got inside");
+     res.sendFile(path.join(__dirname, "../public/exercise.html"));
+   });
 
 //   app.get("/exercise", (req, res) => {
 //     db.notes.findOne( {_id: mongojs.ObjectId(req.params.id) }, (err, data) => {
