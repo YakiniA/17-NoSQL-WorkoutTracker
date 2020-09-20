@@ -13,15 +13,8 @@ module.exports = function(app) {
      res.sendFile(path.join(__dirname, "../public/exercise.html"));
    });
 
-//   app.get("/exercise", (req, res) => {
-//     db.notes.findOne( {_id: mongojs.ObjectId(req.params.id) }, (err, data) => {
-//       if (err) {
-//         console.log(err);
-//       } else {
-//         console.log(data);
-//         res.json(data);
-//       }
-//     });
-//   });
+   app.get("/stats", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/stats.html"));
+  });
   
 };
