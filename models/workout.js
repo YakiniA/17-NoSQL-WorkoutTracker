@@ -26,7 +26,7 @@ exercises: [
         },
         weight: Number,
 
-        steps: Number,
+        sets: Number,
 
         reps: Number,
 
