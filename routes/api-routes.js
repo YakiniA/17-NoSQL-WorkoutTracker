@@ -3,7 +3,7 @@ var db = require("../models");
 
 module.exports = function(app) {
 
- app.post("/api/workouts/", ({ body }, res) => {
+ app.post("/api/workouts/", (req, res) => {
      db.workout.create({})
        .then(workouts => {
         console.log("Created successfully" +workouts);
@@ -34,7 +34,7 @@ module.exports = function(app) {
 //       });
 //   });
   app.put("/api/workouts/:id", ({body, params}, res) => {
-   db.workout.findOneAndUpdate(params.id, { $push: { exercises: body } },  { new: true})
+   db.workout.findOneAndUpdate(params.id, { $push: { exercises: body } },  { new: true , runValidators: true })
       .then(workouts => {
         console.log("Updated successfully" +workouts);
 
