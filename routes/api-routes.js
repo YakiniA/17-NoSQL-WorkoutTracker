@@ -6,6 +6,7 @@ module.exports = function(app) {
  app.post("/api/workouts/", ({ body }, res) => {
      db.workout.create({})
        .then(workouts => {
+        console.log("Created successfully" +workouts);
          res.json(workouts);
        })
        .catch(err => {
@@ -32,10 +33,12 @@ module.exports = function(app) {
 //         res.status(400).json(err);
 //       });
 //   });
-  app.put("/api/workouts:id", ({body, params}, res) => {
+  app.put("/api/workouts/:id", ({body, params}, res) => {
    db.workout.findOneAndUpdate(params.id, { $push: { exercises: body } },  { new: true})
-      .then(dbLibrary => {
-        res.json(dbLibrary);
+      .then(workouts => {
+        console.log("Updated successfully" +workouts);
+
+        res.json(workouts);
       })
       .catch(err => {
         res.json(err);
