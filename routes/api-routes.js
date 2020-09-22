@@ -1,12 +1,11 @@
 var db = require("../models");
 
-
 module.exports = function(app) {
 
  app.post("/api/workouts/", (req, res) => {
      db.workout.create({})
        .then(workouts => {
-        console.log("Created successfully" +workouts);
+        // console.log("Created successfully" +workouts);
          res.json(workouts);
        })
        .catch(err => {
@@ -15,10 +14,10 @@ module.exports = function(app) {
    });
 
    app.put("/api/workouts/:id", ({body, params}, res) => {
-     console.log("ParamsId" +params.id);
+     // console.log("ParamsId" +params.id);
     db.workout.findOneAndUpdate({_id: params.id} , { $push: { exercises: body } },  { useFindAndModify: false, new: true , runValidators: true })
        .then(workouts => {
-         console.log("Updated successfully" +workouts);
+         // console.log("Updated successfully" +workouts);
  
          res.json(workouts);
        })
