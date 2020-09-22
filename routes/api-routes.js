@@ -15,7 +15,7 @@ module.exports = function(app) {
 
    app.put("/api/workouts/:id", ({body, params}, res) => {
      // console.log("ParamsId" +params.id);
-    db.workout.findOneAndUpdate({_id: params.id} , { $push: { exercises: body } },  { useFindAndModify: false, new: true , runValidators: true })
+    db.workout.findOneAndUpdate({_id: params.id} , { $push: { exercises: body } },  { new: true , runValidators: true })
        .then(workouts => {
          // console.log("Updated successfully" +workouts);
  
