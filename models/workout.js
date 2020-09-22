@@ -34,18 +34,12 @@ exercises: [
         distance:Number
     },
 
- 
-]
-
+],
+totalDuration : {
+    type : Number,
+    default : 0
+}
 });
-
-WorkoutSchema.methods.totalDuration = function() {
-    console.log("This.exercises" +this.exercises);
-    this.exercises.reduce((total , data) => {
-    console.log(total+ data.duration);
-    return total+ data.duration;
-});
-};
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
 

@@ -30,6 +30,14 @@ module.exports = function(app) {
   app.get("/api/workouts/", (req, res) => {
     db.workout.find({})
       .then(workouts => {
+        workouts.forEach(workout => {
+          var total =0 ;
+          workout.exercises.forEach(exercises => {
+           total += exercises.duration;
+
+          })
+          workout.totalDuration = total;
+        })
         res.json(workouts);
       })
       .catch(err => {

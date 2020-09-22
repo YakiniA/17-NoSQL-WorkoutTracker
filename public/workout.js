@@ -12,7 +12,7 @@ async function initWorkout() {
       numExercises: lastWorkout.exercises.length,
       ...tallyExercises(lastWorkout.exercises)
     };
-
+console.log("workoutSummary" +workoutSummary.totalDuration);
     renderWorkoutSummary(workoutSummary);
   } else {
     renderNoWorkoutText()
