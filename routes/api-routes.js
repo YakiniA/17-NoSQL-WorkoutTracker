@@ -36,5 +36,16 @@ module.exports = function(app) {
         res.status(400).json(err);
       });
   });
+
+ 
+  app.get("/api/workouts/range", (req, res) => {
+    db.workout.find({}).limit(10)
+      .then(workouts => {
+        res.json(workouts);
+      })
+      .catch(err => {
+        res.status(400).json(err);
+      });
+  });
 }
   
