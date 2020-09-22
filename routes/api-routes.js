@@ -28,7 +28,7 @@ module.exports = function(app) {
    });
    
   app.get("/api/workouts/", (req, res) => {
-    db.workout.find()
+    db.workout.find({})
       .then(workouts => {
         res.json(workouts);
       })
