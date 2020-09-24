@@ -22,7 +22,9 @@ After installing Node.js, to install NPM node module dependencies, run the comma
 ### NPM Module
  
 Express - Express is a minimal and flexible Node.js application framework that provides a robust set of features for web and mobile applications. Used express server for this project and also sets up the express app to handle data parsing.
+
 Mongoose - Mongoose provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
+
 Morgan -  Morgan is a middleware that allows us to easily log requests, errors, and more to the console. It’s easy to use, but still powerful and customizable.
 
 ### Description
